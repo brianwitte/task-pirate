@@ -1,0 +1,77 @@
+* Task Pirate
+
+** Overview
+Task Pirate is a command-line task manager. It rips off Taskwarrior unapologetically but uses Common Lisp. This is what happens when you combine functional programming elitism with task management.
+
+** Features
+*** Core
+- **Add Tasks**: Create tasks. No frills.
+- **Modify Tasks**: Edit tasks. Don’t mess it up.
+- **List Tasks**: View tasks. Filter optional, defaults to everything.
+- **Persistent State**: JSON storage, because that’s what everyone uses now.
+
+*** CLI
+- **Parse Arguments**: Commands like `add`, `modify`, and `list`. Simple, like it should be.
+- **Flexible Input**: Take positional and keyword arguments. No excuses.
+
+*** Advanced
+- **Tags**: Group things with tags. Works, mostly.
+- **Priorities**: Sort tasks. Or don’t.
+- **Statuses**: Pending, done, whatever. Track it.
+- **Dates**: Universal Time. If you mess this up, it’s on you.
+
+** Architecture
+*** Key Components
+- **task-manager.lisp**: Does the actual work. Manages tasks, saves, loads.
+- **main.lisp**: CLI wrapper. Parses input, delegates to the manager.
+
+*** Libraries
+- **Jonathan**: JSON I/O. It works, so we used it.
+- **UIOP**: File handling. Because portability isn’t optional.
+- **libpyr**: Miscellaneous helpers. Don’t ask.
+
+** Usage
+*** Add
+```bash
+$ ./task-pirate add "Name" "Desc" "High" tag1 tag2
+```
+Creates a task. If you’re confused, you shouldn’t be here.
+
+*** List
+```bash
+$ ./task-pirate list
+```
+Shows tasks. Filters? Optional.
+
+*** Modify
+```bash
+$ ./task-pirate modify 0 :description "New Desc"
+```
+Edits task 0. Be precise.
+
+*** Delete
+```bash
+$ ./task-pirate delete 0
+```
+Nukes task 0. No confirmation.
+
+** Roadmap
+1. **Feature Inflation**:
+   - Recurring tasks, because why not.
+   - Task dependencies. Maybe.
+2. **CLI Bloat**:
+   - Add subcommands for filtering. Groan.
+   - Improve help. Someone will complain.
+3. **Storage Alternatives**:
+   - SQLite, cloud. Overkill? Yes.
+4. **Tool Integration**:
+   - Hook into calendars. Email? Probably.
+
+** Contributing
+Fork it, write code, make a pull request. No hand-holding.
+
+** License
+MIT License. Steal it if you want.
+
+** Author
+Brian

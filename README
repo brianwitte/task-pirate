@@ -1,0 +1,60 @@
+Task Pirate
+===========
+
+Taskwarrior, Rewritten in Lisp
+------------------------------
+
+Task Pirate is a command-line task manager. It rips off Taskwarrior
+unapologetically, but uses Common Lisp. This is what happens when you
+combine elitism with task management.
+
+Install
+-------
+
+   $ make
+
+This builds the binary. Then, move it to a directory in your `PATH`:
+
+   $ mv ./task-pirate /usr/local/bin/
+
+Optionally, alias `task` to `task-pirate` to mimic Taskwarrior:
+
+   $ alias task="task-pirate"
+
+Now, you can use Task Pirate with the same commands you'd use for Taskwarrior.
+
+Usage
+-----
+
+Add
+~~~
+
+   $ ./task-pirate add "Name" "Desc" "High" tag1 tag2
+
+Creates a task. If you’re confused, you shouldn’t be here.
+
+List
+~~~~
+
+   $ ./task-pirate list
+
+Shows tasks. Filters? Optional.
+
+Modify
+~~~~~~
+
+   $ ./task-pirate modify 0 :description "New Desc"
+
+Edits task 0. Be precise.
+
+Delete
+~~~~~~
+
+   $ ./task-pirate delete 0
+
+Nukes task 0. No confirmation.
+
+License
+-------
+
+MPL-2.0
